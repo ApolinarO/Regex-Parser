@@ -3,7 +3,18 @@
 
 ## About
 
-This program was developed using C# with the mono compiler. This program takes in arguments from the command line. The first argument is the file with the DFA in it. The next optional arguments would be what strings to run the DFA's with.
+This program takes in DFA's, NFA's, and even Regular Expressions and creates an executable machine out of it.
+
+This program was developed using C# with the mono compiler.
+
+## Possible Commands
+
+	./program ${ARG1} ${ARG2}...${ARGN}
+
+* **ARG1**: "regex", "NFA", or "DFA", depending on which machine you want to emulate
+* **ARG2...ARGN**: input strings to test the regular expression with
+	* Note that if the "NFA" or "DFA" option was selected, then **ARG2** is dedicated to the file containing the DFA definition with alphabet speecification
+	* See files under /demos for examples of NFA and DFA definition syntax 
 
 ## Notes
 * Note that when running the regex parser, the alphabet is implicitly defined through the unique characters found in the regex pattern.
