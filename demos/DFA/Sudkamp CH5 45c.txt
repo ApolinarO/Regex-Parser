@@ -1,0 +1,9 @@
+ab
+>q0,*q1,q2,*q3,q4,*q5,*q6
+q0|a:q1,b:q3
+q1|a:q2,b:q4
+q2|a:q5,b:q5
+q3|a:q4,b:q2
+q4|a:q5,b:q5
+q5|a:q6,b:q5
+q6|a:q6,b:q6
