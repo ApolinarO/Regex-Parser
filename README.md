@@ -1,15 +1,21 @@
 # Regex/NFA/DFA Converter
-## Apolinar Ortega
+## Developer(s)
+* Apolinar Ortega
 
 ## About
 
-This program takes in DFA's, NFA's, and even Regular Expressions and creates an executable machine out of it.
+The purpose of this program is to allow you to input in regular expressions, DFA's, and NFA's to then convert them into an executable finite-state machine, which would let you run tests against it.
 
-This program was developed using C# with the mono compiler.
+## Compiling
+
+Make sure that when compiling and running the program that you are in the same directory as this README. Make sure to have the mono compiler installed and the latest version of Java:
+
+	make
 
 ## Possible Commands
 
 	./program ${ARG1} ${ARG2}...${ARGN}
+	./program regex '(b)+a' aa bba b
 
 * **ARG1**: "regex", "NFA", or "DFA", depending on which machine you want to emulate
 * **ARG2...ARGN**: input strings to test the regular expression with
@@ -21,25 +27,6 @@ This program was developed using C# with the mono compiler.
 	* For example regex 'a+ba' has an alphabet of {a, b}
 	* The program fails if you enter characters out of the alphabet for testing. For example, testing 'abc' on the above fails since 'c' is not in the defined alphabet
 	* This has the same restriction with the NFA and DFA conversion
-
-## Running The Program
-
-Make sure that when compiling and running the program that you are in the same directory as this README. If you do not have mono, you may either have to download it or run the _csc_ compile command if on Windows. Run any of the following to compile the program:
-
-	make
-	make program
-	mcs src/program.cs src/DFA.cs src/TransitionState.cs -out:program
-
-Once compiled, you can run the program with:
-
-	mono program $DFA_FILE $OPTIONAL_STRINGS
-
-Where $DFA_FILE is replaced with the file containing the DFA and $OPTIONAL_STRINGS can be left empty or can be replaced with a set of strings to test the machines with.
-
-The program also contains a series of demoes that can be run with the following:
-
-	make run
-
 
 ## DFA File Format
 
